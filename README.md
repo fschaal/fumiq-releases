@@ -79,7 +79,7 @@ Connect to your Azure Service Bus namespace using a connection string or Azure A
 
 ## Installation
 
-Download the latest release from the [releases page](https://github.com/florian-deft/nexq/releases).
+Download the latest release from the [releases page](https://github.com/fschaal/fumiq-releases/releases).
 
 ## Troubleshooting
 
