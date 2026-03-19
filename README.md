@@ -1,87 +1,123 @@
+<div align="center">
+
+<img src="https://fumiq.app/logo-64.png" alt="Fumiq logo" width="80" />
+
 # Fumiq
 
-A cross-platform Azure Service Bus Explorer.
+**One tool for all your queues.**
+
+A fast, native, cross-platform desktop app for browsing, inspecting, and managing message queues.
+
+macOS · Windows · Linux
+
+</div>
+
+---
 
 ![Fumiq — peek messages](screenshots/peek-messages.png)
 
-Fumiq lets you browse, inspect, and manage Azure Service Bus entities from a native desktop app. Built for developers who find the Azure Portal too slow and ServiceBusExplorer too Windows-centric. Support for other queue providers (RabbitMQ, Amazon SQS) is planned.
+Fumiq gives you fast, visual access to your message queues. Browse entities, peek messages with syntax highlighting, send and schedule messages, manage dead-letter queues, and more — all from a lightweight native app that runs on every platform.
 
-## Features
+## 🔌 Supported Providers
 
-### Browse & Inspect
+- **Azure Service Bus** — Full support for queues, topics, subscriptions, dead-letter queues, sessions, deferred messages, and more
+- **RabbitMQ** — Coming soon
+- **Kafka, Amazon SQS, Google Pub/Sub** — On the horizon
+
+## ✨ Features
+
+### 🌳 Browse & Inspect
 
 - Entity tree with live message counts for queues, topics, and subscriptions
 - Peek messages without consuming them
-- JSON and XML syntax highlighting with JSON tree view
-- Message property inspection (system, application, custom)
+- JSON and XML syntax highlighting with collapsible tree view
+- Full message property inspection (system, application, custom)
 - Automatic stack trace detection and formatting
 
 ![Message body with JSON highlighting](screenshots/message-body.png)
 
 ![Message properties](screenshots/message-properties.png)
 
-### Send & Schedule
+### 📨 Send & Schedule
 
 - Send messages with full metadata (content type, correlation ID, custom properties, etc.)
 - Schedule messages with relative or absolute delivery times
-- Bulk send with progress tracking
+- Bulk send with template engine — define variables, generate sequences, stress-test queues
 
 ![Bulk send messages](screenshots/bulk-send.png)
 
-### Edit & Resubmit
+### 🔧 Repair & Resubmit
 
 - Edit message body and properties, then resubmit
+- Fix malformed payloads directly from the dead-letter queue
 - Works from any tab — active messages, dead-letter queue, or deferred
 
-### Dead Letter Management
+### 💀 Dead Letter Management
 
-- Peek and inspect dead-lettered messages
-- Resubmit to the original entity or a different one
+- Browse, inspect, and resubmit dead-lettered messages
+- View dead-letter reason and error descriptions
 - Bulk delete and purge operations
 
 ![Dead letter queue](screenshots/dead-letter.png)
 
-### Entity Management
+### 🏗️ Entity Management
 
 - Create, update, and delete queues, topics, and subscriptions
-- Manage subscription rules with SQL and correlation filters
+- Manage subscription filter rules with SQL and correlation filters
 
-### Advanced Features
+### 📋 Custom Columns & Filtering
 
-- Session-aware browsing and message peeking
-- Deferred message support
-- Message filtering with 14+ operators
-- Custom columns from application properties or JSON paths
-- Export and import messages
+- Add columns for application properties or extract values from JSON bodies using JSONPath
+- Resize, reorder, and persist layouts per entity
+- Filter messages with a visual query builder and 14+ operators
 
 ![Filtered message table with custom columns](screenshots/filtered-table.png)
 
+### 📦 Copy, Export & Import
+
+- Copy messages between queues
+- Export to JSON files or import messages from disk
+- Move data across environments in seconds
+
 ![Import messages dialog](screenshots/import-dialog.png)
 
-### Keyboard-First
+### ⚡ Bulk Operations
 
-- Command palette (Cmd+K / Ctrl+K)
-- Keyboard shortcuts throughout the app
+- Select multiple messages with checkboxes or Shift+click ranges
+- Bulk delete, dead-letter, resubmit, or cancel scheduled messages in one action
+
+### 🔐 Authentication
+
+- Connect with connection strings or Azure AD with RBAC
+- Organize connections into folders with drag-and-drop
+
+![Add connection dialog](screenshots/add-connection.png)
+
+### 🎯 Advanced
+
+- Session-aware browsing and message peeking
+- Deferred message support
+- Scheduled message management (view, cancel, purge)
+- Auto-refresh with configurable intervals
+
+### ⌨️ Keyboard-First
+
+- Command palette (`Cmd+K` / `Ctrl+K`)
+- Full keyboard navigation with shortcuts for all common actions
 - Fast entity search
 
 ![Command palette](screenshots/command-palette.png)
 
-### Cross-Platform
+### 💻 Cross-Platform & Native
 
 - macOS, Windows, and Linux
-- Native Rust backend — not Electron
+- Native performance with minimal memory footprint
 
-### Getting Started
-
-Connect to your Azure Service Bus namespace using a connection string or Azure AD.
-
-![Add connection dialog](screenshots/add-connection.png)
-
-## Installation
+## 📥 Installation
 
 Download the latest release from the [releases page](https://github.com/fschaal/fumiq-releases/releases).
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### Linux: WebKitGTK crash on systems with Intel Arc GPUs
 
@@ -99,10 +135,10 @@ WEBKIT_DISABLE_COMPOSITING_MODE=1 fumiq
 
 This is a known upstream issue with Intel Arc drivers and WebKitGTK, not a bug in Fumiq.
 
-## Website
+## 🌐 Website
 
 For more information, pricing, and downloads, visit [fumiq.app](https://fumiq.app).
 
-## License
+## 📄 License
 
 Fumiq is proprietary software. See the [LICENSE](LICENSE) file for details.
