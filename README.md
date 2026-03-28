@@ -86,6 +86,13 @@ Fumiq gives you fast, visual access to your message queues. Browse entities, pee
 - Select multiple messages with checkboxes or Shift+click ranges
 - Bulk delete, dead-letter, resubmit, or cancel scheduled messages in one action
 
+### 🔒 Receive & Settle (PeekLock)
+
+- Receive and lock messages without consuming them
+- Settle individually: complete, abandon, or dead-letter with reason and description
+- Lock timer countdown per message so you know when locks expire
+- Works on both active queues and dead-letter queues
+
 ### 🔐 Authentication
 
 - Connect with connection strings or Azure AD with RBAC
