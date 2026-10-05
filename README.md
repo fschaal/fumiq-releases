@@ -4,129 +4,102 @@
 
 # Fumiq
 
-**One tool for all your queues.**
+### The fast, visual Azure Service Bus explorer
 
-A fast, native, cross-platform desktop app for browsing, inspecting, and managing message queues.
+A native desktop app for browsing queues and subscriptions, peeking and sending messages, and clearing dead-letters in seconds.
 
-macOS · Windows · Linux
+**macOS · Windows · Linux**
+
+[**Download**](https://github.com/fschaal/fumiq-releases/releases/latest) · [Website](https://fumiq.app) · [Pricing](https://fumiq.app/#pricing) · [Changelog](https://fumiq.app/changelog)
+
+<sub>Free 30-day trial · All features included · No credit card</sub>
+
+<br />
+
+<a href="https://fumiq.app/video/intro.mp4">
+  <img src="screenshots/intro-poster.jpg" alt="Watch the Fumiq intro video" width="820" />
+</a>
+
+<sub>▶ <a href="https://fumiq.app/video/intro.mp4">Watch the 27-second intro</a></sub>
 
 </div>
 
----
+<br />
 
-![Fumiq — peek messages](screenshots/peek-messages.png)
+## Browse and peek
 
-Fumiq gives you fast, visual access to your message queues. Browse entities, peek messages with syntax highlighting, send and schedule messages, manage dead-letter queues, and more — all from a lightweight native app that runs on every platform.
+Browse every queue, topic, and subscription, and peek messages the moment you click.
 
-## 🔌 Supported Providers
+![Fumiq showing a namespace in the sidebar, a queue with peeked messages, and the JSON body of the selected message](screenshots/browse-and-peek.png)
 
-- **Azure Service Bus** — Full support for queues, topics, subscriptions, dead-letter queues, sessions, deferred messages, and more
-- **RabbitMQ** — Coming soon
-- **Kafka, Amazon SQS, Google Pub/Sub** — On the horizon
+## Repair dead-letters
 
-## ✨ Features
+Sift through what dead-lettered, then resubmit the messages that deserve another run. Edit a broken payload first if it needs fixing.
 
-### 🌳 Browse & Inspect
+![Fumiq showing the dead-letter tab with failed messages selected and the actions menu open on Resubmit](screenshots/dead-letter-repair.png)
 
-- Entity tree with live message counts for queues, topics, and subscriptions
-- Peek messages without consuming them
-- JSON and XML syntax highlighting with collapsible tree view
-- Full message property inspection (system, application, custom)
-- Automatic stack trace detection and formatting
+## Read a message properly
 
-![Message body with JSON highlighting](screenshots/message-body.png)
+The body as a syntax-highlighted JSON or XML tree, and every system and application property beside it.
 
-![Message properties](screenshots/message-properties.png)
+![Fumiq showing a message with its JSON body expanded and syntax highlighted](screenshots/message-detail.png)
 
-### 📨 Send & Schedule
+## Send with a template
 
-- Send messages with full metadata (content type, correlation ID, custom properties, etc.)
-- Schedule messages with relative or absolute delivery times
-- Bulk send with template engine — define variables, generate sequences, stress-test queues
+Fill a queue with realistic test data from one template, hundreds of messages at a time. Placeholders like `{{index}}`, `{{guid}}` and `{{timestamp}}` make every message unique.
 
-![Bulk send messages](screenshots/bulk-send.png)
+![Fumiq's bulk send dialog with a JSON template using index, GUID and timestamp placeholders](screenshots/send-with-a-template.png)
 
-### 🔧 Repair & Resubmit
+## Keyboard first
 
-- Edit message body and properties, then resubmit
-- Fix malformed payloads directly from the dead-letter queue
-- Works from any tab — active messages, dead-letter queue, or deferred
+Reach any action, or any entity in the namespace, without leaving the keyboard. Open the command palette with `Cmd+K` / `Ctrl+K`.
 
-### 💀 Dead Letter Management
+![Fumiq's command palette listing actions with their keyboard shortcuts](screenshots/command-palette.png)
 
-- Browse, inspect, and resubmit dead-lettered messages
-- View dead-letter reason and error descriptions
-- Bulk delete and purge operations
+## Everything else
 
-![Dead letter queue](screenshots/dead-letter.png)
+| | |
+|---|---|
+| **Custom columns and filters** | Add columns from application properties or JSONPath into the body, and filter with a visual query builder. |
+| **Bulk operations** | Select with checkboxes or Shift+click, then delete, dead-letter, resubmit or cancel in one go. |
+| **PeekLock** | Receive and lock messages, then complete, abandon or dead-letter them with a live lock timer. |
+| **Copy, export, import** | Copy messages between queues, or move them across environments as JSON files. |
+| **Sessions, deferred, scheduled** | Session-aware browsing, deferred messages, and scheduled messages you can view, cancel or purge. |
+| **Entity management** | Create, update and delete queues, topics, subscriptions and their filter rules. |
+| **Authentication** | Connection strings or Azure AD with RBAC. Organise connections in folders. |
+| **Native** | Small, fast and light on memory on every platform. |
 
-### 🏗️ Entity Management
+<details>
+<summary><b>More screenshots</b></summary>
 
-- Create, update, and delete queues, topics, and subscriptions
-- Manage subscription filter rules with SQL and correlation filters
-
-### 📋 Custom Columns & Filtering
-
-- Add columns for application properties or extract values from JSON bodies using JSONPath
-- Resize, reorder, and persist layouts per entity
-- Filter messages with a visual query builder and 14+ operators
+<br />
 
 ![Filtered message table with custom columns](screenshots/filtered-table.png)
 
-### 📦 Copy, Export & Import
-
-- Copy messages between queues
-- Export to JSON files or import messages from disk
-- Move data across environments in seconds
+![Message properties](screenshots/message-properties.png)
 
 ![Import messages dialog](screenshots/import-dialog.png)
 
-### ⚡ Bulk Operations
-
-- Select multiple messages with checkboxes or Shift+click ranges
-- Bulk delete, dead-letter, resubmit, or cancel scheduled messages in one action
-
-### 🔒 Receive & Settle (PeekLock)
-
-- Receive and lock messages without consuming them
-- Settle individually: complete, abandon, or dead-letter with reason and description
-- Lock timer countdown per message so you know when locks expire
-- Works on both active queues and dead-letter queues
-
-### 🔐 Authentication
-
-- Connect with connection strings or Azure AD with RBAC
-- Organize connections into folders with drag-and-drop
-
 ![Add connection dialog](screenshots/add-connection.png)
 
-### 🎯 Advanced
+</details>
 
-- Session-aware browsing and message peeking
-- Deferred message support
-- Scheduled message management (view, cancel, purge)
-- Auto-refresh with configurable intervals
+## Providers
 
-### ⌨️ Keyboard-First
+- **Azure Service Bus**: full support
+- **RabbitMQ**: coming soon
+- **Kafka, Amazon SQS, Google Pub/Sub**: on the horizon
 
-- Command palette (`Cmd+K` / `Ctrl+K`)
-- Full keyboard navigation with shortcuts for all common actions
-- Fast entity search
+## Installation
 
-![Command palette](screenshots/command-palette.png)
+Download the latest build for your platform from the [releases page](https://github.com/fschaal/fumiq-releases/releases/latest). Fumiq updates itself after that.
 
-### 💻 Cross-Platform & Native
+## Troubleshooting
 
-- macOS, Windows, and Linux
-- Native performance with minimal memory footprint
+<details>
+<summary><b>Linux: WebKitGTK crash on systems with Intel Arc GPUs</b></summary>
 
-## 📥 Installation
-
-Download the latest release from the [releases page](https://github.com/fschaal/fumiq-releases/releases).
-
-## 🔧 Troubleshooting
-
-### Linux: WebKitGTK crash on systems with Intel Arc GPUs
+<br />
 
 Fumiq uses WebKitGTK for rendering on Linux. On systems with Intel Arc GPUs (e.g. Intel Ultra 7/9 series), the WebKit renderer may crash due to DMA-BUF buffer sharing issues between Mesa and WebKitGTK on Wayland.
 
@@ -142,10 +115,8 @@ WEBKIT_DISABLE_COMPOSITING_MODE=1 fumiq
 
 This is a known upstream issue with Intel Arc drivers and WebKitGTK, not a bug in Fumiq.
 
-## 🌐 Website
+</details>
 
-For more information, pricing, and downloads, visit [fumiq.app](https://fumiq.app).
-
-## 📄 License
+## License
 
 Fumiq is proprietary software. See the [LICENSE](LICENSE) file for details.
