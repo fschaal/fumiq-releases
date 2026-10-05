@@ -26,75 +26,116 @@ A native desktop app for browsing queues and subscriptions, peeking and sending 
 
 <br />
 
-## Browse and peek
+## ✨ Features
 
-Browse every queue, topic, and subscription, and peek messages the moment you click.
+### 🌳 Browse & Inspect
+
+- Entity tree with live message counts for queues, topics, and subscriptions
+- Peek messages without consuming them
+- JSON and XML syntax highlighting with collapsible tree view
+- Full message property inspection (system, application, custom)
+- Automatic stack trace detection and formatting
 
 ![Fumiq showing a namespace in the sidebar, a queue with peeked messages, and the JSON body of the selected message](screenshots/browse-and-peek.png)
 
-## Repair dead-letters
-
-Sift through what dead-lettered, then resubmit the messages that deserve another run. Edit a broken payload first if it needs fixing.
-
-![Fumiq showing the dead-letter tab with failed messages selected and the actions menu open on Resubmit](screenshots/dead-letter-repair.png)
-
-## Read a message properly
-
-The body as a syntax-highlighted JSON or XML tree, and every system and application property beside it.
-
 ![Fumiq showing a message with its JSON body expanded and syntax highlighted](screenshots/message-detail.png)
-
-## Send with a template
-
-Fill a queue with realistic test data from one template, hundreds of messages at a time. Placeholders like `{{index}}`, `{{guid}}` and `{{timestamp}}` make every message unique.
-
-![Fumiq's bulk send dialog with a JSON template using index, GUID and timestamp placeholders](screenshots/send-with-a-template.png)
-
-## Keyboard first
-
-Reach any action, or any entity in the namespace, without leaving the keyboard. Open the command palette with `Cmd+K` / `Ctrl+K`.
-
-![Fumiq's command palette listing actions with their keyboard shortcuts](screenshots/command-palette.png)
-
-## Everything else
-
-| | |
-|---|---|
-| **Custom columns and filters** | Add columns from application properties or JSONPath into the body, and filter with a visual query builder. |
-| **Bulk operations** | Select with checkboxes or Shift+click, then delete, dead-letter, resubmit or cancel in one go. |
-| **PeekLock** | Receive and lock messages, then complete, abandon or dead-letter them with a live lock timer. |
-| **Copy, export, import** | Copy messages between queues, or move them across environments as JSON files. |
-| **Sessions, deferred, scheduled** | Session-aware browsing, deferred messages, and scheduled messages you can view, cancel or purge. |
-| **Entity management** | Create, update and delete queues, topics, subscriptions and their filter rules. |
-| **Authentication** | Connection strings or Azure AD with RBAC. Organise connections in folders. |
-| **Native** | Small, fast and light on memory on every platform. |
-
-<details>
-<summary><b>More screenshots</b></summary>
-
-<br />
-
-![Filtered message table with custom columns](screenshots/filtered-table.png)
 
 ![Message properties](screenshots/message-properties.png)
 
+### 📨 Send & Schedule
+
+- Send messages with full metadata (content type, correlation ID, custom properties, etc.)
+- Schedule messages with relative or absolute delivery times
+- Bulk send with template engine: define variables, generate sequences, stress-test queues
+- Placeholders like `{{index}}`, `{{guid}}`, `{{timestamp}}` and `{{random.int}}` make every message unique
+
+![Fumiq's bulk send dialog with a JSON template using index, GUID and timestamp placeholders](screenshots/send-with-a-template.png)
+
+### 🔧 Repair & Resubmit
+
+- Edit message body and properties, then resubmit
+- Fix malformed payloads directly from the dead-letter queue
+- Works from any tab: active messages, dead-letter queue, or deferred
+
+### 💀 Dead Letter Management
+
+- Browse, inspect, and resubmit dead-lettered messages
+- View dead-letter reason and error descriptions
+- Bulk delete and purge operations
+
+![Fumiq showing the dead-letter tab with failed messages selected and the actions menu open on Resubmit](screenshots/dead-letter-repair.png)
+
+### 🏗️ Entity Management
+
+- Create, update, and delete queues, topics, and subscriptions
+- Manage subscription filter rules with SQL and correlation filters
+
+### 📋 Custom Columns & Filtering
+
+- Add columns for application properties or extract values from JSON bodies using JSONPath
+- Resize, reorder, and persist layouts per entity
+- Filter messages with a visual query builder and 14+ operators
+
+![Filtered message table with custom columns](screenshots/filtered-table.png)
+
+### 📦 Copy, Export & Import
+
+- Copy messages between queues
+- Export to JSON files or import messages from disk
+- Move data across environments in seconds
+
 ![Import messages dialog](screenshots/import-dialog.png)
+
+### ⚡ Bulk Operations
+
+- Select multiple messages with checkboxes or Shift+click ranges
+- Bulk delete, dead-letter, resubmit, or cancel scheduled messages in one action
+
+### 🔒 Receive & Settle (PeekLock)
+
+- Receive and lock messages without consuming them
+- Settle individually: complete, abandon, or dead-letter with reason and description
+- Lock timer countdown per message so you know when locks expire
+- Works on both active queues and dead-letter queues
+
+### 🔐 Authentication
+
+- Connect with connection strings or Azure AD with RBAC
+- Organize connections into folders with drag-and-drop
 
 ![Add connection dialog](screenshots/add-connection.png)
 
-</details>
+### 🎯 Advanced
 
-## Providers
+- Session-aware browsing and message peeking
+- Deferred message support
+- Scheduled message management (view, cancel, purge)
+- Auto-refresh with configurable intervals
 
-- **Azure Service Bus**: full support
+### ⌨️ Keyboard-First
+
+- Command palette (`Cmd+K` / `Ctrl+K`)
+- Full keyboard navigation with shortcuts for all common actions
+- Fast entity search
+
+![Fumiq's command palette listing actions with their keyboard shortcuts](screenshots/command-palette.png)
+
+### 💻 Cross-Platform & Native
+
+- macOS, Windows, and Linux
+- Native performance with minimal memory footprint
+
+## 🔌 Supported Providers
+
+- **Azure Service Bus**: full support for queues, topics, subscriptions, dead-letter queues, sessions, deferred messages, and more
 - **RabbitMQ**: coming soon
 - **Kafka, Amazon SQS, Google Pub/Sub**: on the horizon
 
-## Installation
+## 📥 Installation
 
 Download the latest build for your platform from the [releases page](https://github.com/fschaal/fumiq-releases/releases/latest). Fumiq updates itself after that.
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 <details>
 <summary><b>Linux: WebKitGTK crash on systems with Intel Arc GPUs</b></summary>
@@ -117,6 +158,6 @@ This is a known upstream issue with Intel Arc drivers and WebKitGTK, not a bug i
 
 </details>
 
-## License
+## 📄 License
 
 Fumiq is proprietary software. See the [LICENSE](LICENSE) file for details.
